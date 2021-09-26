@@ -29,6 +29,7 @@ export default function AuthContextProvider({ children }) {
             setAuthReady(false)
             console.log('log OUT event handled successfully...');
         })
+        
         netlifyIdentity.init()
 
         return () => {
