@@ -5,9 +5,15 @@ exports.handler = async (event, context) => {
         {title: "small stuff", author: "toad"},
         {title: "very small indeed", author: "mario"}
     ]
-
+if (context.clientContext.user){
     return {
         statusCode: 200,
         body: JSON.stringify(guides)
     }
+}
+
+return {
+    statusCode: 401,
+    body: JSON.stringify({msg: 'you must be logged in, to see this ...'})
+}
 }

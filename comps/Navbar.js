@@ -18,7 +18,7 @@ export default function Navbar() {
                         {!user && <li onClick={login} className="btn">Login/Signup</li>}
                         {user && <li> {user.email} </li>}
                         {user && <li onClick={logout} className="btn">Logout</li>}
-                    </ul>)
+                    </ul>
              
             </nav>
             <div className="banner">

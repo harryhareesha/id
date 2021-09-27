@@ -16,13 +16,13 @@ export default function AuthContextProvider({ children }) {
         netlifyIdentity.on('init', (user) => {
             setAuthReady(true)
             setUser(user)
-            console.log('init event');
+            console.log(`init event for - ${user}`);
         })
         netlifyIdentity.on('login', (user) => {
             setUser(user)
             setAuthReady(true)
             netlifyIdentity.close()
-            console.log('login event handled successfully...');
+            console.log(`login event handled successfully...${user.token.access_token}`);
         })
         netlifyIdentity.on('logout', () => {
             setUser(null)
